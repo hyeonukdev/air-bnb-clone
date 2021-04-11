@@ -1,3 +1,8 @@
 # if you want kill http server (port 8000) use this
 sudo lsof -t -i tcp:8000 | xargs kill -9
 
+# if you make application use startapp, you should add s like rooms, not room
+
+# custom user model
+https://docs.djangoproject.com/en/3.2/topics/auth/customizing/
+
