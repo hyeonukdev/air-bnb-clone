@@ -41,7 +41,12 @@ class RoomAdmin(admin.ModelAdmin):
         "check_in",
         "check_out",
         "instant_book",
+        "count_amenities",
+        "count_facilities",
+        "count_hoseRule",
     )
+
+    ordering = ("name", "price")
 
     list_filter = (
         "instant_book",
@@ -57,6 +62,16 @@ class RoomAdmin(admin.ModelAdmin):
     search_fields = ("=city", "^host__username")
 
     filter_horizontal = ("amenities", "facilities", "house_rules")
+
+    def count_amenities(self, obj):
+        return obj.amenities.count()
+
+    def count_facilities(self, obj):
+        return obj.facilities.count()
+
+    def count_hoseRule(self, obj):
+        return obj.house_rules.count()
+
 
 
 @admin.register(models.Photo)
