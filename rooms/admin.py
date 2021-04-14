@@ -5,6 +5,12 @@ from . import models
 @admin.register(models.RoomType, models.Facility, models.Amenity, models.HouseRule)
 class ItemAdmin(admin.ModelAdmin):
     ''' Item Admin Definition '''
+
+    list_display = ("name", "used_by")
+
+    def used_by(self, obj):
+        return obj.rooms.count()
+
     pass
 
 
@@ -44,6 +50,7 @@ class RoomAdmin(admin.ModelAdmin):
         "count_amenities",
         "count_facilities",
         "count_hoseRule",
+        "count_photos",
     )
 
     ordering = ("name", "price")
@@ -72,6 +79,8 @@ class RoomAdmin(admin.ModelAdmin):
     def count_hoseRule(self, obj):
         return obj.house_rules.count()
 
+    def count_photos(self, obj):
+        return obj.photos.count()
 
 
 @admin.register(models.Photo)
