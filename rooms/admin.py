@@ -51,6 +51,7 @@ class RoomAdmin(admin.ModelAdmin):
         "count_facilities",
         "count_hoseRule",
         "count_photos",
+        "total_rating",
     )
 
     ordering = ("name", "price")
