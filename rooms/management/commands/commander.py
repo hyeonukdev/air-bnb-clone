@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 
 
+# python manage.py commander --times 30
 class Command(BaseCommand):
     help = "This command tells me that repeat"
 
