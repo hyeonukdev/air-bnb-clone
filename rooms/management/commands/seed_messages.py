@@ -7,7 +7,7 @@ from users import models as user_models
 from rooms import models as room_models
 
 
-NAME = "lists"
+NAME = "messages"
 
 
 class Command(BaseCommand):
