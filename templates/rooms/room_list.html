@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
 
-{% block page_name %}
-    Home
-{% endblock page_name %}
+{% block page_title %}
+Home
+{% endblock page_title %}
 
 {% block content %}
 
-    {{now}}
+{{now}}
 
-    {% for room in rooms  %}
-        <h3>
-            <a href="{% url "rooms:detail" room.pk %}">
-                {{room.name}} / ${{room.price}}
-            </a>
+{% for room in rooms  %}
+<h3>
+    <a href="{% url " rooms:detail" room.pk %}">
+    {{room.name}} / ${{room.price}}
+    </a>
         </h3>
     {% endfor %}
 

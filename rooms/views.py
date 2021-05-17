@@ -57,8 +57,14 @@ def room_detail(request, pk):
     except models.Room.DoesNotExist:
         raise Http404()
 
-class RoomDetail(DetailView):
 
+class RoomDetail(DetailView):
     """ RoomDetail Definition """
 
     model = models.Room
+
+
+def search(request):
+    city = request.GET.get("city")
+    city = str.capitalize(city)
+    return render(request, "rooms/search.html", {"city": city})
