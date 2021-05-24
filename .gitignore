@@ -141,3 +141,5 @@ cython_debug/
 
 # Mac
 uploads/
+
+node_modules
